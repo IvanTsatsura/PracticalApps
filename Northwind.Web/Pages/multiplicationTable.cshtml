@@ -1,0 +1,35 @@
+﻿@page
+@model Northwind.Web.Pages.multiplicationTableModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+}
+<h1>
+    @ViewData["Title"]
+</h1>
+@using (Html.BeginForm())
+{
+    <label for="Number">What is your number</label>
+    <input type="text" asp-for="Number">
+    <br />
+    <input type="submit" id="Submit">  
+}
+<div>
+    <h3>Your namber: @Model.Number</h3>
+</div>
+
+<div>
+    <table class="table">
+        <thead class="thead-inverse">
+            <tr><th>Multiplication table</th></tr>
+        </thead>
+        <tbody>
+            
+                @for(int i = 1; i <= 12; i++)
+                {
+                    <tr><td>@i * 5 = @(i*5)</td></tr>
+                }
+           
+        </tbody>
+    
+    </table>
+</div>

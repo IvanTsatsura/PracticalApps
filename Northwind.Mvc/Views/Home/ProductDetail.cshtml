@@ -1,0 +1,21 @@
+﻿@model Packt.Shared.Product
+@{
+    ViewData["Title"] = "Product detail - " + Model.ProductName;
+}
+
+<h2>Product detail</h2>
+<hr />
+<div>
+    <dl class="dl-horizontal">
+        <dt>Product id</dt>
+        <dd>@Model.ProductId</dd>
+        <dt>Product name</dt>
+        <dd>@Model.ProductName</dd>
+        <dt>Category id</dt>
+        <dd>@Model.CategoryId</dd>
+        <dt>Price</dt>
+        <dd>@Model.UnitPrice.Value.ToString("C")</dd>
+        <dt>Units in stock</dt>
+        <dd>@Model.UnitsInStock</dd>
+    </dl>
+</div>
